@@ -1,8 +1,6 @@
 package strng
 
-import(
-	"testing"
-)
+import "testing"
 
 func TestContain(t *testing.T){
 	result := Contain("seafood", "foo")
