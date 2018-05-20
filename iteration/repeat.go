@@ -1,7 +1,5 @@
 package iteration
 
-const repeatCount = 5
-
 func Repeat(charachter string, count int) string {
 	var repeated string
 
