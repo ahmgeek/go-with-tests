@@ -1,7 +1,6 @@
 package sum
 
-import "fmt"
-
+// Sum array numbers
 func Sum(numbers []int) int {
 	sum := 0
 	for _, number := range numbers {
@@ -10,10 +9,16 @@ func Sum(numbers []int) int {
 	return sum
 }
 
-func SumAllTails(numberToSum ...[]int) (sums []int) {
+// AllTails : sums all tails in an array.
+func AllTails(numberToSum ...[]int) (sums []int) {
 	for _, numbers := range numberToSum {
-		tail := numbers[1:]
-		sums = append(sums, Sum(tail))
+		if len(numbers) == 0 {
+			sums = append(sums, 0)
+		} else{
+
+			tail := numbers[1:]
+			sums = append(sums, Sum(tail))
+		}
 	}
 	return sums
 }
