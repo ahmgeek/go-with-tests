@@ -10,12 +10,10 @@ func Sum(numbers []int) int {
 	return sum
 }
 
-func SumAll(numberToSum ...[]int) (sums []int) {
+func SumAllTails(numberToSum ...[]int) (sums []int) {
 	for _, numbers := range numberToSum {
-		fmt.Print("-------------------------\n")
-		fmt.Printf("%d \n",numbers)
-		
-		sums = append(sums, Sum(numbers))
+		tail := numbers[1:]
+		sums = append(sums, Sum(tail))
 	}
 	return sums
 }
