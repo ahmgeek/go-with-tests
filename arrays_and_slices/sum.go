@@ -10,14 +10,12 @@ func Sum(numbers []int) int {
 	return sum
 }
 
-func SumAll(numberToSum ...[]int) []int {
-	length := len(numberToSum)
-	sums := make([]int, length)
-
-	for key, value := range numberToSum {
-		sums[key] = Sum(value)
+func SumAll(numberToSum ...[]int) (sums []int) {
+	for _, numbers := range numberToSum {
 		fmt.Print("-------------------------\n")
-		fmt.Printf("%d \n",key)
+		fmt.Printf("%d \n",numbers)
+		
+		sums = append(sums, Sum(numbers))
 	}
 	return sums
 }
