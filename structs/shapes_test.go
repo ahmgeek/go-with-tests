@@ -14,8 +14,10 @@ func TestPerimeter(t *testing.T) {
 
 func TestArea(t *testing.T) {
 
-	var assertCorrectArea = func(t *testing.T, want float64, got float64) {
+	var checkArea = func(t *testing.T, shape Shape, want float64) {
 		t.Helper()
+		got := shape.Area()
+
 		if want != got {
 			t.Errorf("got %.2f want %.2f", got, want)
 		}
@@ -24,9 +26,13 @@ func TestArea(t *testing.T) {
 
 	t.Run("Rectangle", func(t *testing.T) {
 		rectangle := Rectangle{12.0, 6.0}
-		got := Area(rectangle)
-		want := 72.0
 
-		assertCorrectArea(t, want, got)
+		checkArea(t, rectangle, 72.0)
+	})
+
+	t.Run("Circle", func(t *testing.T) {
+		circle := Circle{10.0}
+
+		checkArea(t, circle, 314.1592653589793)
 	})
 }
