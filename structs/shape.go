@@ -20,8 +20,8 @@ type Sphere struct {
 }
 
 type Triangle struct {
-    Base   float64
-    Height float64
+	Base   float64
+	Height float64
 }
 
 
