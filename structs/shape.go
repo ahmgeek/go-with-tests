@@ -30,7 +30,7 @@ func (r Rectangle) Area() float64 {
 
 func (s Sphere) Area() float64 {
 	// Amazing math skills.
-	return s.Radius * s.Radius
+	return (math.Pi * 4) * (s.Radius * s.Radius)
 }
 
 func Perimeter(rectangle Rectangle) float64 {
